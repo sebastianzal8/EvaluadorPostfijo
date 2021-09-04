@@ -34,38 +34,36 @@ public class EvaluadorPostfijo {
 
         for (String elem : expresion) {
             if (elem.equals("+")) {
-                int numero1 = pila.pop(); // primer numero
-                int numero2 = pila.pop(); //Siguiente numero
+                int numero1 = pila.pop(); // primer número
+                int numero2 = pila.pop(); //Siguiente número
                 int suma = numero1 + numero2;
                 pila.push(suma);//suma de los dos
             }else if (elem.equals("-")) {
-                int numero1 = pila.pop(); // primer numero
-                int numero2 = pila.pop(); //Siguiente numero
-                int resta = numero1 - numero2;
+                int numero1 = pila.pop(); // primer número
+                int numero2 = pila.pop(); //Siguiente número
+                int resta = numero2 - numero1;
                 pila.push(resta);//resta de los dos
             } else if (elem.equals("*")) {
-                int numero1 = pila.pop(); // primer numero
-                int numero2 = pila.pop(); //Siguiente numero
+                int numero1 = pila.pop(); // primer número
+                int numero2 = pila.pop(); //Siguiente número
                 int multi = numero1 * numero2;
                 pila.push(multi);//multiplica de los dos
             } else if (elem.equals("/")) {
-                int numero1 = pila.pop(); // primer numero
-                int numero2 = pila.pop(); //Siguiente numero
-                int divi = numero1 / numero2;
+                int numero1 = pila.pop(); // primer número
+                int numero2 = pila.pop(); //Siguiente número
+                int divi = numero2 / numero1;
                 pila.push(divi);//divide los dos
             } else if (elem.equals("%")) {
-                int numero1 = pila.pop(); // primer numero
-                int numero2 = pila.pop(); //Siguiente numero
-                int modu = numero1 % numero2;
-                pila.push(modu);//modulo de los dos
+                int numero1 = pila.pop(); // primer número
+                int numero2 = pila.pop(); //Siguiente número
+                int modu = numero2 % numero1;
+                pila.push(modu);//módulo de los dos
             }
             else {
                 int num = Integer.parseInt(elem);
                 pila.push(num);
             }
         }
-        // TODO: Realiza la evaluación de la expresión en formato postfijo
-
         return pila.pop();
     }
 
