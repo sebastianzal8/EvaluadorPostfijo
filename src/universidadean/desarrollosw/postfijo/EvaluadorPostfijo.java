@@ -32,6 +32,10 @@ public class EvaluadorPostfijo {
     static int evaluarPostFija(List<String> expresion) {
         Stack<Integer> pila = new Stack<>();
 
+        for (String elem:expresion) {
+            System.out.println(elem);
+        }
+
         for (String elem : expresion) {
             if (elem.equals("+")) {
                 int numero1 = pila.peek(); // primer numero
