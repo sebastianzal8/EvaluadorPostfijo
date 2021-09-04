@@ -53,11 +53,6 @@ public class EvaluadorPostfijo {
                 int numero2 = pila.pop(); //Siguiente número
                 int divi = numero2 / numero1;
                 pila.push(divi);//divide los dos
-            } else if (elem.equals("%")) {
-                int numero1 = pila.pop(); // primer número
-                int numero2 = pila.pop(); //Siguiente número
-                int modu = numero2 % numero1;
-                pila.push(modu);//módulo de los dos
             }
             else {
                 int num = Integer.parseInt(elem);
