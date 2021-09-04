@@ -32,22 +32,16 @@ public class EvaluadorPostfijo {
     static int evaluarPostFija(List<String> expresion) {
         Stack<Integer> pila = new Stack<>();
 
-        for (String elem:expresion) {
-            System.out.println(elem);
-        }
-
         for (String elem : expresion) {
             if (elem.equals("+")) {
-                int numero1 = pila.peek(); // primer numero
-                pila.pop();
+                int numero1 = pila.pop(); // primer numero
                 int numero2 = pila.pop(); //Siguiente numero
-                pila.pop();
                 int suma = numero1 + numero2;
                 System.out.println(suma);//suma de los dos
             }
             else {
                 int num = Integer.parseInt(elem);
-                num = pila.peek();
+                pila.push(num);
             }
         }
         // TODO: Realiza la evaluación de la expresión en formato postfijo
