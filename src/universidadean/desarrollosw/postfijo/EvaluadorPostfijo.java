@@ -37,7 +37,27 @@ public class EvaluadorPostfijo {
                 int numero1 = pila.pop(); // primer numero
                 int numero2 = pila.pop(); //Siguiente numero
                 int suma = numero1 + numero2;
-                System.out.println(suma);//suma de los dos
+                pila.push(suma);//suma de los dos
+            }else if (elem.equals("-")) {
+                int numero1 = pila.pop(); // primer numero
+                int numero2 = pila.pop(); //Siguiente numero
+                int resta = numero1 - numero2;
+                pila.push(resta);//resta de los dos
+            } else if (elem.equals("*")) {
+                int numero1 = pila.pop(); // primer numero
+                int numero2 = pila.pop(); //Siguiente numero
+                int multi = numero1 * numero2;
+                pila.push(multi);//multiplica de los dos
+            } else if (elem.equals("/")) {
+                int numero1 = pila.pop(); // primer numero
+                int numero2 = pila.pop(); //Siguiente numero
+                int divi = numero1 / numero2;
+                pila.push(divi);//divide los dos
+            } else if (elem.equals("%")) {
+                int numero1 = pila.pop(); // primer numero
+                int numero2 = pila.pop(); //Siguiente numero
+                int modu = numero1 % numero2;
+                pila.push(modu);//modulo de los dos
             }
             else {
                 int num = Integer.parseInt(elem);
